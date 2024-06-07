@@ -1,6 +1,6 @@
 package com.example.calculusrationator;
 
-public class LogicEtOu {
+public class LogicEtOuAffirmation {
 
     public static Boolean Et(Boolean a, Boolean b){
       return  a && b;

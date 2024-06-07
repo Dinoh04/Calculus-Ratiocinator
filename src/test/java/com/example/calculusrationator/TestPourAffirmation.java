@@ -15,7 +15,7 @@ public class TestPourAffirmation {
         var Lou = new NomDeLaPersonne("Lou");
         var Généreux = new Généreux(true);
         var Pauvre = new Pauvre();
-        assertFalse(LogicEtOu.Et(Pauvre.évaluation(), Généreux.évaluation()));
+        assertFalse(LogicEtOuAffirmation.Et(Pauvre.évaluation(), Généreux.évaluation()));
     }
 
     @Test
@@ -23,7 +23,7 @@ public class TestPourAffirmation {
         var lou = new NomDeLaPersonne("Lou");
         var Beau = new Beau();
         var Pauvre = new Pauvre();
-        assertFalse(LogicEtOu.Affirmation(Beau.évaluation(), Pauvre.évaluation()));
+        assertFalse(LogicEtOuAffirmation.Affirmation(Beau.évaluation(), Pauvre.évaluation()));
     }
 
     @Test
@@ -32,9 +32,9 @@ public class TestPourAffirmation {
         var Pauvre = new Pauvre();
         var Généreux = new Généreux(true);
         var GénéreuxFaux = new Généreux(false);
-        assertTrue(LogicEtOu.Affirmation(Pauvre.évaluation(), Généreux.évaluation()));
+        assertTrue(LogicEtOuAffirmation.Affirmation(Pauvre.évaluation(), Généreux.évaluation()));
         //On test aussi si lou n'est pas généreux
-        assertFalse(LogicEtOu.Affirmation(Pauvre.évaluation(), GénéreuxFaux.évaluation()));
+        assertFalse(LogicEtOuAffirmation.Affirmation(Pauvre.évaluation(), GénéreuxFaux.évaluation()));
     }
 
     @Test
@@ -43,7 +43,7 @@ public class TestPourAffirmation {
         var Beau = new Beau();
         var Généreux = new Généreux(true);
         var Pauvre = new Pauvre();
-        assertFalse(LogicEtOu.Affirmation(LogicEtOu.Ou(Beau.évaluation(), Généreux.évaluation()), Pauvre.évaluation()));
+        assertFalse(LogicEtOuAffirmation.Affirmation(LogicEtOuAffirmation.Ou(Beau.évaluation(), Généreux.évaluation()), Pauvre.évaluation()));
     }
 
     @Test
@@ -51,6 +51,6 @@ public class TestPourAffirmation {
         var lou = new NomDeLaPersonne("Lou");
         var Pauvre = new Pauvre();
         var Généreux = new Généreux(true);
-        assertTrue(LogicEtOu.Ou(Pauvre.évaluation(), Généreux.évaluation()));
+        assertTrue(LogicEtOuAffirmation.Ou(Pauvre.évaluation(), Généreux.évaluation()));
     }
 }
