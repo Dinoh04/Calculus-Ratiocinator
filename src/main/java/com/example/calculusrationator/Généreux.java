@@ -1,9 +1,9 @@
 package com.example.calculusrationator;
 
-public class Affirmation extends Proposition{
+public class Généreux extends Proposition{
     public final Boolean valeur;
 
-    public Affirmation(Boolean valeur) {
+    public Généreux(Boolean valeur) {
         this.valeur = valeur;
     }
 
